@@ -5,6 +5,8 @@ plugins {
 
 dependencies {
 
+    implementation(projects.core.designSystem)
+
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
