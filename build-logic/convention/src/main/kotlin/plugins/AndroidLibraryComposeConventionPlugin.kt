@@ -2,7 +2,6 @@ package plugins
 
 import com.android.build.gradle.LibraryExtension
 import com.vlaskorobogatov.routiner.configureAndroidCompose
-import com.vlaskorobogatov.routiner.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType

@@ -5,8 +5,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
-val GradientColorFirst = Color(0xFF6B73FF)
-val GradientColorSecond = Color(0xFF000DFF)
+val GradientColorFirst = Color(color = 0xFF6B73FF)
+val GradientColorSecond = Color(color = 0xFF000DFF)
 
 internal val MainGradient = Brush.linearGradient(
     0f to GradientColorFirst,

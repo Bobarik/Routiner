@@ -38,6 +38,3 @@ fun Button(
     }
     Text(text = label)
 }
-
-
-

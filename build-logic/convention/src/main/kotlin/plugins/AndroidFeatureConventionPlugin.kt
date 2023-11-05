@@ -7,7 +7,6 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidFeatureConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) = with(target) {
-
         pluginManager.apply {
             apply("routiner.android.library")
             apply("routiner.android.library.compose")
