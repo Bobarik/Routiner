@@ -27,4 +27,7 @@ rootProject.name = "Routiner"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
+include(":core:arch:core")
+include(":core:arch:compose")
 include(":core:design-system")
+include(":feature:sample")

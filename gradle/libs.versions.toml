@@ -1,24 +1,29 @@
 [versions]
-kotlin = "1.9.10"
+kotlin = "1.9.20"
 android-minSdk = "24"
 android-compileSdk = "34"
 android-targetSdk = "34"
-agp = "8.3.0-alpha12"
-ksp = "1.9.10-1.0.13"
+agp = "8.3.0-alpha13"
+ksp = "1.9.20-1.0.14"
 
 core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 
-lifecycle-runtime-ktx = "2.6.2"
+kotlinx-coroutines = "1.7.3"
+
+androidx-lifecycle = "2.6.2"
 activity-compose = "1.8.0"
 
 compose-bom = "2023.10.01"
-compose-compiler = "1.5.3"
+compose-compiler = "1.5.4"
 
 # Decompose
 decompose = "2.1.3"
+
+# MVI
+mvikotlin = "3.3.0"
 
 # Desugaring
 desugar-jdk-libs = "2.0.4"
@@ -34,8 +39,12 @@ core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+
+# Coroutines
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 
 # Ui
 # Compose
@@ -61,6 +70,11 @@ koin-android-test = { group = "io.insert-koin", name = "koin-android-test" }
 decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
 decompose-compose = { group = "com.arkivanov.decompose", name = "extensions-compose-jetpack", version.ref = "decompose" }
 
+# MVI
+mvikotlin = { group = "com.arkivanov.mvikotlin", name = "mvikotlin", version.ref = "mvikotlin" }
+mvikotlin-main = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-main", version.ref = "mvikotlin" }
+mvikotlin-extensions-coroutines = { group = "com.arkivanov.mvikotlin", name = "mvikotlin-extensions-coroutines", version.ref = "mvikotlin" }
+
 # Code Style
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 
@@ -83,6 +97,12 @@ compose = [
 compose-debug = [
     "compose-ui-tooling",
     "compose-ui-test-manifest"
+]
+
+mvikotlin = [
+    "mvikotlin",
+    "mvikotlin-main",
+    "mvikotlin-extensions-coroutines",
 ]
 
 [plugins]
