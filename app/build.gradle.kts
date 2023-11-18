@@ -6,13 +6,19 @@ plugins {
 dependencies {
 
     implementation(projects.core.designSystem)
-    implementation(projects.feature.sample.sample)
+    implementation(projects.feature.root)
+    implementation(projects.feature.sample)
+    implementation(projects.feature.splash)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
+
+    implementation(libs.decompose)
+    implementation(libs.decompose.compose)
+
 
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)

@@ -11,6 +11,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
         pluginManager.apply {
             apply("routiner.android.library")
             apply("routiner.android.library.compose")
+            apply(libs.plugins.kotlin.parcelize.get().pluginId)
         }
 
         dependencies {
