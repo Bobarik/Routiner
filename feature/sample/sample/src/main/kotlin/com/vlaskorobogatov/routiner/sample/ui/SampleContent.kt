@@ -9,7 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Modifier
-import com.vlaskorobogatov.routiner.sample.store.SampleState
+import com.vlaskorobogatov.routiner.sampleapi.store.SampleState
 
 @Composable
 fun SampleContent(

@@ -6,7 +6,7 @@ plugins {
 dependencies {
 
     implementation(projects.core.designSystem)
-    implementation(projects.feature.sample)
+    implementation(projects.feature.sample.sample)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

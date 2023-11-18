@@ -6,6 +6,7 @@ import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.labels
 import com.arkivanov.mvikotlin.extensions.coroutines.stateFlow
 import com.vlaskorobogatov.routiner.sample.store.SampleStoreFactory
+import com.vlaskorobogatov.routiner.sampleapi.component.SampleComponent
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 class SampleComponentImpl(

@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.vlaskorobogatov.routienr.buildlogic"
+group = "com.vlaskorobogatov.routiner.buildlogic"
 
 dependencies {
     compileOnly(libs.android.gradle.plugin)

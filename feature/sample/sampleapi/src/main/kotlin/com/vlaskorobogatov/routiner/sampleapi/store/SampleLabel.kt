@@ -1,4 +1,4 @@
-package com.vlaskorobogatov.routiner.sample.store
+package com.vlaskorobogatov.routiner.sampleapi.store
 
 import com.vlaskorobogatov.routiner.archcore.store.Label
 

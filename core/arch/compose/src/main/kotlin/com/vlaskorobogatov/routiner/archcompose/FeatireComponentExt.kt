@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.Lifecycle.State.STARTED
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import com.vlaskorobogatov.routiner.archcore.component.FeatureComponent
@@ -14,7 +15,7 @@ import com.vlaskorobogatov.routiner.archcore.store.State
 @SuppressLint("ComposableNaming")
 @Composable
 fun <STATE : State, LABEL : Label> FeatureComponent<STATE, LABEL>.collectLabel(
-    lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
+    lifecycleState: Lifecycle.State = STARTED,
     sideEffect: (suspend (sideEffect: LABEL) -> Unit)
 ) {
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -28,5 +29,5 @@ fun <STATE : State, LABEL : Label> FeatureComponent<STATE, LABEL>.collectLabel(
 
 @Composable
 fun <STATE : State, LABEL : Label> FeatureComponent<STATE, LABEL>.collectAsState(
-    lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
+    lifecycleState: Lifecycle.State = STARTED,
 ) = state.collectAsStateWithLifecycle(minActiveState = lifecycleState)

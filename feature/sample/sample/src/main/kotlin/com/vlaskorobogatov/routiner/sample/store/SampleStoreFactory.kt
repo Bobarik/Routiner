@@ -4,6 +4,8 @@ import com.arkivanov.mvikotlin.core.store.Reducer
 import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
+import com.vlaskorobogatov.routiner.sampleapi.store.SampleLabel
+import com.vlaskorobogatov.routiner.sampleapi.store.SampleState
 import kotlinx.coroutines.Dispatchers.Main
 import org.koin.core.component.KoinComponent
 import org.koin.ext.getFullName

@@ -14,10 +14,4 @@ dependencies {
 
     // Lifecycle
     implementation(libs.lifecycle.runtime.compose)
-
-    // Decompose
-    implementation(libs.decompose)
-
-    // MVI
-    implementation(libs.bundles.mvikotlin)
 }

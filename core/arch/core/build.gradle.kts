@@ -5,7 +5,7 @@ plugins {
 dependencies {
     implementation(libs.kotlinx.coroutines)
 
-    api(libs.decompose)
+    implementation(libs.decompose)
 
-    api(libs.bundles.mvikotlin)
+    implementation(libs.bundles.mvikotlin)
 }
