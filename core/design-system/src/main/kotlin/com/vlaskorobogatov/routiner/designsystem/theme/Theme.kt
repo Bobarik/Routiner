@@ -30,7 +30,7 @@ fun RoutinerTheme(
     }
 
     CompositionLocalProvider(
-        LocalGradientColors provides MainGradient
+        LocalGradients provides Gradient()
     ) {
         MaterialTheme(
             colorScheme = colorScheme,
