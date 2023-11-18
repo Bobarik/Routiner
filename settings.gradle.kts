@@ -31,7 +31,7 @@ fun includeFeature(feature: File) = feature.listFiles()?.forEach { file -> inclu
 fun includeModule(file: File) = include(file.path.replace(File.separatorChar, ':'))
 
 File("feature").listFiles()?.forEach { file ->
-    includeModule(file)
+    includeFeature(file)
 }
 
 include(":app")

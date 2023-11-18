@@ -1,14 +1,16 @@
 plugins {
     id("routiner.android.application")
+    id("routiner.android.application.compose")
     id("routiner.android.lint")
 }
 
 dependencies {
 
     implementation(projects.core.designSystem)
-    implementation(projects.feature.root)
-    implementation(projects.feature.sample)
-    implementation(projects.feature.splash)
+    implementation(projects.feature.root.root)
+    implementation(projects.feature.root.rootapi)
+    implementation(projects.feature.root.rootui)
+    implementation(projects.feature.splash.splash)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -19,6 +21,8 @@ dependencies {
     implementation(libs.decompose)
     implementation(libs.decompose.compose)
 
+    implementation(libs.mvikotlin)
+    implementation(libs.mvikotlin.main)
 
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)

@@ -2,18 +2,23 @@ package com.vlaskorobogatov.routiner
 
 import android.app.Application
 import com.vlaskorobogatov.routiner.root.di.RootModule
-import com.vlaskorobogatov.routiner.sample.di.SampleModule
 import com.vlaskorobogatov.routiner.splash.di.SplashModule
-import org.koin.dsl.koinApplication
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
 class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        koinApplication {
-            RootModule
-            SampleModule
-            SplashModule
+        startKoin {
+            androidLogger()
+            androidContext(this@App)
+            modules(
+                AppModule,
+                RootModule,
+                SplashModule
+            )
         }
     }
 }
