@@ -21,7 +21,6 @@ fun SplashContent(
             .padding(insetPadding),
         contentAlignment = Center
     ) {
-
         Text(text = state.text, style = typography.displayLarge)
     }
 }

@@ -5,5 +5,5 @@ import com.arkivanov.mvikotlin.main.store.DefaultStoreFactory
 import org.koin.dsl.module
 
 val AppModule = module {
-    single<StoreFactory> {DefaultStoreFactory()}
+    single<StoreFactory> { DefaultStoreFactory() }
 }
