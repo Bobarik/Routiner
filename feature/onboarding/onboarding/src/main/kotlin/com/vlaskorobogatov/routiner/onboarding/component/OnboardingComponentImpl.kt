@@ -1,27 +1,24 @@
-package com.vlaskorobogatov.routiner.start.component
+package com.vlaskorobogatov.routiner.onboarding.component
 
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.mvikotlin.core.instancekeeper.getStore
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.labels
 import com.arkivanov.mvikotlin.extensions.coroutines.stateFlow
-import com.vlaskorobogatov.routiner.start.store.StartFactory
-import com.vlaskorobogatov.routiner.startapi.component.StartComponent
+import com.vlaskorobogatov.routiner.onboarding.store.OnboardingFactory
+import com.vlaskorobogatov.routiner.onboardingapi.component.OnboardingComponent
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-class StartComponentImpl(
+class OnboardingComponentImpl(
     componentContext: ComponentContext,
-    storeFactory: StoreFactory,
-    private val onProcess: () -> Unit
-) : StartComponent, ComponentContext by componentContext {
+    storeFactory: StoreFactory
+) : OnboardingComponent, ComponentContext by componentContext {
 
     private val store = instanceKeeper.getStore {
-        StartFactory(storeFactory = storeFactory).create()
+        OnboardingFactory(storeFactory = storeFactory).create()
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     override val state = store.stateFlow
     override val labelFlow = store.labels
-
-    override fun process() { onProcess() }
 }

@@ -5,9 +5,12 @@ import com.arkivanov.mvikotlin.core.store.SimpleBootstrapper
 import com.arkivanov.mvikotlin.core.store.Store
 import com.arkivanov.mvikotlin.core.store.StoreFactory
 import com.arkivanov.mvikotlin.extensions.coroutines.CoroutineExecutor
+import com.vlaskorobogatov.routiner.startapi.component.store.MoveOnboarding
 import com.vlaskorobogatov.routiner.startapi.component.store.StartLabel
 import com.vlaskorobogatov.routiner.startapi.component.store.StartState
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class StartFactory(
     private val storeFactory: StoreFactory
@@ -26,7 +29,11 @@ class StartFactory(
     ) {
         override fun executeAction(action: Unit, getState: () -> StartState) {
             super.executeAction(action, getState)
-            println("123")
+            scope.launch {
+                //TODO: logic related to account processing
+                delay(timeMillis = 2000)
+                publish(MoveOnboarding)
+            }
         }
     }
 

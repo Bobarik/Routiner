@@ -4,7 +4,9 @@ import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
+import com.arkivanov.decompose.router.stack.push
 import com.arkivanov.decompose.value.Value
+import com.vlaskorobogatov.routiner.onboardingapi.component.OnboardingComponent
 import com.vlaskorobogatov.routiner.splashapi.component.SplashComponent
 import com.vlaskorobogatov.routiner.splashapi.component.SplashComponent.Child.Onboarding
 import com.vlaskorobogatov.routiner.splashapi.component.SplashComponent.Child.Start
@@ -17,8 +19,18 @@ class SplashComponentImpl(
     componentContext: ComponentContext,
 ) : SplashComponent, ComponentContext by componentContext {
 
-    private fun start(componentContext: ComponentContext): StartComponent = get(
+    private fun start(
+        componentContext: ComponentContext,
+        onProcess: () -> Unit
+    ): StartComponent = get(
         clazz = StartComponent::class.java,
+        parameters = { parametersOf(componentContext, onProcess) }
+    )
+
+    private fun onboarding(
+        componentContext: ComponentContext,
+    ): OnboardingComponent = get(
+        clazz = OnboardingComponent::class.java,
         parameters = { parametersOf(componentContext) }
     )
 
@@ -31,8 +43,14 @@ class SplashComponentImpl(
         handleBackButton = false
     ) { configuration, componentContext ->
         when (configuration) {
-            Config.Start -> Start(start(componentContext))
-            Config.Onboarding -> Onboarding(this)
+            Config.Start -> Start(
+                start(
+                    componentContext = componentContext,
+                    onProcess = { navigation.push(Config.Onboarding) }
+                )
+            )
+
+            Config.Onboarding -> Onboarding(onboarding(componentContext = componentContext))
         }
     }
 

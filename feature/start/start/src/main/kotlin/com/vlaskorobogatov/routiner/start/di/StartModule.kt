@@ -8,7 +8,8 @@ val StartModule = module {
     factory<StartComponent> { params ->
         StartComponentImpl(
             componentContext = params.get(),
-            storeFactory = get()
+            storeFactory = get(),
+            onProcess = params.get()
         )
     }
 }

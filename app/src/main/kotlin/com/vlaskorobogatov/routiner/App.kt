@@ -1,6 +1,7 @@
 package com.vlaskorobogatov.routiner
 
 import android.app.Application
+import com.vlaskorobogatov.routiner.onboarding.di.OnboardingModule
 import com.vlaskorobogatov.routiner.root.di.RootModule
 import com.vlaskorobogatov.routiner.splash.di.SplashModule
 import com.vlaskorobogatov.routiner.start.di.StartModule
@@ -19,7 +20,8 @@ class App : Application() {
                 AppModule,
                 RootModule,
                 SplashModule,
-                StartModule
+                StartModule,
+                OnboardingModule
             )
         }
     }

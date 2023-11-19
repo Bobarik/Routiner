@@ -11,9 +11,11 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.vlaskorobogatov.routiner.archcompose.collectLabel
 import com.vlaskorobogatov.routiner.designsystem.R.drawable.img_logo
 import com.vlaskorobogatov.routiner.designsystem.R.drawable.img_logo_title
 import com.vlaskorobogatov.routiner.startapi.component.StartComponent
+import com.vlaskorobogatov.routiner.startapi.component.store.MoveOnboarding
 
 @Composable
 fun StartScreen(
@@ -29,5 +31,11 @@ fun StartScreen(
     ) {
         Image(painter = painterResource(id = img_logo), contentDescription = null)
         Image(painter = painterResource(id = img_logo_title), contentDescription = null)
+    }
+
+    component.collectLabel { label ->
+        when (label) {
+            MoveOnboarding -> component.process()
+        }
     }
 }

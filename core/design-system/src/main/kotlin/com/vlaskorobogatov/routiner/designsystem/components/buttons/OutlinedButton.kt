@@ -17,13 +17,13 @@ fun OutlinedButton(
     modifier: Modifier = Modifier,
     label: String,
     icon: Painter? = null,
-    buttonThickness: ButtonThickness = ButtonThickness.Regular,
+    thickness: ButtonThickness = ButtonThickness.Regular,
     onClick: () -> Unit
 ) = OutlinedButton(
     modifier = modifier.defaultMinSize(minWidth = 58.dp, minHeight = 36.dp),
     contentPadding = PaddingValues(
-        horizontal = 20.dp,
-        vertical = buttonThickness.verticalPadding
+        horizontal = thickness.horizontalPadding,
+        vertical = thickness.verticalPadding
     ),
     onClick = onClick
 ) {
