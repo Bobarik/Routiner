@@ -11,6 +11,7 @@ dependencies {
     implementation(projects.feature.root.rootapi)
     implementation(projects.feature.root.rootui)
     implementation(projects.feature.splash.splash)
+    implementation(projects.feature.start.start)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

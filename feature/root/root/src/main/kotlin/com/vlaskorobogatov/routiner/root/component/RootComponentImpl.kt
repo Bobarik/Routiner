@@ -38,6 +38,6 @@ class RootComponentImpl(
 
     @Serializable
     private sealed interface Config {
-        data object Splash : Config
+        @Serializable data object Splash : Config
     }
 }

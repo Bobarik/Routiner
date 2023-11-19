@@ -7,4 +7,5 @@ dependencies {
     implementation(projects.core.designSystem)
     implementation(projects.core.arch.compose)
     implementation(projects.feature.splash.splashapi)
+    implementation(projects.feature.start.startui)
 }

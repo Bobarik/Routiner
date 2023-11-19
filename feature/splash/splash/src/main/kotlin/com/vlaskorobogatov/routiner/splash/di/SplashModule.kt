@@ -6,9 +6,6 @@ import org.koin.dsl.module
 
 val SplashModule = module {
     factory<SplashComponent> { params ->
-        SplashComponentImpl(
-            componentContext = params.get(),
-            storeFactory = get()
-        )
+        SplashComponentImpl(componentContext = params.get())
     }
 }

@@ -9,14 +9,14 @@ internal val PrimaryLinear = listOf(
 )
 
 internal val PrimaryRadial = listOf(
-    Color(color = 0x80EF88ED),
-    Color(color = 0x807269E3),
+    Color(color = 0xFFEF88ED),
+    Color(color = 0xFF7269E3),
     Color(color = 0x008350DB),
 )
 
 internal val SecondaryRadial: List<Color> = listOf(
-    Color(color = 0x80EBEBEB),
-    Color(color = 0x80A3A1C8),
+    Color(color = 0xFFEBEBEB),
+    Color(color = 0xFFA3A1C8),
     Color(color = 0x007B55BC),
 )
 
