@@ -3,6 +3,7 @@ package com.vlaskorobogatov.routiner.designsystem.theme
 import androidx.compose.ui.graphics.Color
 
 val Blue100 = Color(color = 0xFF3843FF)
+val Blue40 = Color(color = 0xFFAFB4FF)
 val BlueInfo100 = Color(color = 0xFF12A4ED)
 val Red100 = Color(color = 0xFFE3524F)
 val Green100 = Color(color = 0xFF3BA935)

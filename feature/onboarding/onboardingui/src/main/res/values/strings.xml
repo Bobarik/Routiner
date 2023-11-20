@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_pager_habits_title">Create\nGood Habits</string>
+    <string name="onboarding_tracking_title">Track\nYour Progress</string>
+    <string name="onboarding_connection_title">Stay Together\nand Strong</string>
+    <string name="onboarding_habits_text">Change your life by slowly adding new healthy habits and sticking to them.</string>
+    <string name="onboarding_tracker_text">Everyday you become one step closer to\nyour goal. Don’t give up!</string>
+    <string name="onboarding_connection_text">Find friends to discuss common topics. Complete challenges together.</string>
+</resources>

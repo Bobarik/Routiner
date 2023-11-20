@@ -22,8 +22,8 @@ fun Button(
     icon: Painter? = null,
     thickness: ButtonThickness = ButtonThickness.Regular,
     colors: ButtonColors = buttonColors(
-        contentColor = colorScheme.surface,
-        containerColor = colorScheme.onSurface
+        containerColor = colorScheme.surface,
+        contentColor = colorScheme.onSurface
     ),
     onClick: () -> Unit,
 ) = Button(

@@ -16,7 +16,7 @@ class OnboardingFactory(
     fun create(): OnboardingStore =
         object : OnboardingStore, Store<OnboardingIntent, OnboardingState, OnboardingLabel> by storeFactory.create(
             name = OnboardingStore::class.java.name,
-            initialState = OnboardingState,
+            initialState = OnboardingState(),
             bootstrapper = SimpleBootstrapper(Unit),
             executorFactory = ::ExecutorImpl,
             reducer = ReducerImpl
@@ -26,6 +26,6 @@ class OnboardingFactory(
         CoroutineExecutor<OnboardingIntent, Unit, OnboardingState, Unit, OnboardingLabel>(Main)
 
     private object ReducerImpl : Reducer<OnboardingState, Unit> {
-        override fun OnboardingState.reduce(msg: Unit) = OnboardingState
+        override fun OnboardingState.reduce(msg: Unit) = OnboardingState()
     }
 }

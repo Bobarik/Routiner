@@ -20,14 +20,13 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
 
-    implementation(libs.decompose)
-    implementation(libs.decompose.compose)
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
 
     implementation(libs.mvikotlin)
     implementation(libs.mvikotlin.main)
 
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.android)
+    implementation(libs.decompose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
