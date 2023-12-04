@@ -1,7 +1,8 @@
 package com.vlaskorobogatov.routiner.onboardingui.ui
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement.Bottom
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Spacer
@@ -23,6 +24,7 @@ import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Transparent
+import androidx.compose.ui.layout.ContentScale.Companion.Fit
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -30,6 +32,7 @@ import com.vlaskorobogatov.routiner.archcompose.collectLabel
 import com.vlaskorobogatov.routiner.onboardingapi.component.OnboardingComponent
 import com.vlaskorobogatov.routiner.onboardingapi.component.store.PagerContent
 import com.vlaskorobogatov.routiner.onboardingui.ui.components.AuthButtons
+import com.vlaskorobogatov.routiner.onboardingui.ui.mappers.pagerImage
 import com.vlaskorobogatov.routiner.onboardingui.ui.mappers.pagerText
 import com.vlaskorobogatov.routiner.onboardingui.ui.mappers.pagerTitle
 
@@ -37,12 +40,9 @@ import com.vlaskorobogatov.routiner.onboardingui.ui.mappers.pagerTitle
 fun OnboardingScreen(
     component: OnboardingComponent
 ) {
-
     OnboardingContent()
 
-    component.collectLabel {
-
-    }
+    component.collectLabel {}
 }
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -80,8 +80,17 @@ fun ColumnScope.OnboardingPager(pagerState: PagerState) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 12.dp, end = 12.dp),
+            verticalArrangement = Bottom
         ) {
-            Box(modifier = Modifier.weight(1f))
+            Image(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+                painter = state.pagerImage,
+                contentDescription = null,
+                contentScale = Fit
+            )
+            Spacer(modifier = Modifier.height(16.dp))
             Text(text = state.pagerTitle, style = typography.displayMedium, color = colorScheme.onPrimary)
             Spacer(modifier = Modifier.height(8.dp))
             Text(text = state.pagerText, style = typography.bodyMedium, color = colorScheme.onPrimaryContainer)

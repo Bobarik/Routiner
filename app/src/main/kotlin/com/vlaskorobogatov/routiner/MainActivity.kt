@@ -1,7 +1,9 @@
 package com.vlaskorobogatov.routiner
 
+import android.graphics.Color.TRANSPARENT
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle.Companion.dark
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.arkivanov.decompose.defaultComponentContext
@@ -18,7 +20,9 @@ class MainActivity : ComponentActivity() {
 
         val root: RootComponent by inject(parameters = { parametersOf(defaultComponentContext()) })
 
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle = dark(TRANSPARENT)
+        )
 
         setContent {
             RoutinerTheme {

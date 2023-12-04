@@ -16,13 +16,15 @@ class StartFactory(
     private val storeFactory: StoreFactory
 ) {
 
-    fun create(): StartStore = object : StartStore, Store<StartIntent, StartState, StartLabel> by storeFactory.create(
-        name = StartStore::class.java.name,
-        initialState = StartState,
-        bootstrapper = SimpleBootstrapper(Unit),
-        executorFactory = ::ExecutorImpl,
-        reducer = ReducerImpl
-    ) {}
+    fun create(): StartStore = object :
+        StartStore,
+        Store<StartIntent, StartState, StartLabel> by storeFactory.create(
+            name = StartStore::class.java.name,
+            initialState = StartState,
+            bootstrapper = SimpleBootstrapper(Unit),
+            executorFactory = ::ExecutorImpl,
+            reducer = ReducerImpl
+        ) {}
 
     private inner class ExecutorImpl : CoroutineExecutor<StartIntent, Unit, StartState, Unit, StartLabel>(
         Dispatchers.Main
@@ -30,7 +32,7 @@ class StartFactory(
         override fun executeAction(action: Unit, getState: () -> StartState) {
             super.executeAction(action, getState)
             scope.launch {
-                //TODO: logic related to account processing
+                // TODO: logic related to account processing
                 delay(timeMillis = 2000)
                 publish(MoveOnboarding)
             }

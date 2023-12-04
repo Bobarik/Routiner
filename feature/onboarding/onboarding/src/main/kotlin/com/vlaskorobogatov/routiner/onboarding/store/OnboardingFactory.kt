@@ -14,13 +14,15 @@ class OnboardingFactory(
 ) {
 
     fun create(): OnboardingStore =
-        object : OnboardingStore, Store<OnboardingIntent, OnboardingState, OnboardingLabel> by storeFactory.create(
-            name = OnboardingStore::class.java.name,
-            initialState = OnboardingState(),
-            bootstrapper = SimpleBootstrapper(Unit),
-            executorFactory = ::ExecutorImpl,
-            reducer = ReducerImpl
-        ) {}
+        object :
+            OnboardingStore,
+            Store<OnboardingIntent, OnboardingState, OnboardingLabel> by storeFactory.create(
+                name = OnboardingStore::class.java.name,
+                initialState = OnboardingState(),
+                bootstrapper = SimpleBootstrapper(Unit),
+                executorFactory = ::ExecutorImpl,
+                reducer = ReducerImpl
+            ) {}
 
     private inner class ExecutorImpl :
         CoroutineExecutor<OnboardingIntent, Unit, OnboardingState, Unit, OnboardingLabel>(Main)

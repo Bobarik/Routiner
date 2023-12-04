@@ -299,6 +299,12 @@ exceptions:
       - 'RuntimeException'
       - 'Throwable'
 
+formatting:
+  SpacingBetweenDeclarationsWithAnnotations:
+    active: true
+    ignoreAnnotated:
+      - 'Serializable'
+
 naming:
   active: true
   BooleanPropertyNaming:
